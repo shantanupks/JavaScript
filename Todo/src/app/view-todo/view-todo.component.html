@@ -1,0 +1,38 @@
+<div class="container">
+
+    <button class="btn btn-dark" (click)="completeAll($event)">Complete All</button>&nbsp;
+    <button class="btn btn-dark">Clear completed</button>&nbsp;
+
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+                <th>Completed</th>
+                <th>Creation Time</th>
+                <th>Complete Todo</th>
+                <th>Edit Todo</th>
+                <th>Delete Todo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos">
+                <td>{{todo.title}}</td>
+                <td>{{todo.body}}</td>
+                <td *ngIf="todo.completed"><i class="fa fa-check" aria-hidden="true"></i></td>
+                <td *ngIf="!todo.completed"><i class="fa fa-close" aria-hidden="true"></i></td>
+                <td>{{todo.creationTime|date}}</td>
+                <td><button class="btn btn-success" (click)="completeTodo(todo)">Complete Todo</button></td>
+                <td><a [routerLink]="['editTodo',todo.id]">Edit Todo</a></td>
+                <td><button class="btn btn-danger" (click)="deleteTodo(todo)">Delete Todo</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="row">
+        <div class="col col-sm-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

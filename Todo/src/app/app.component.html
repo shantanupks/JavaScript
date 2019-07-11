@@ -1,0 +1,20 @@
+<div>
+  <app-navbar [value]="title"></app-navbar>
+</div>
+<div class="container">
+
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link " href="/">home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/addTodo">addTodo</a>
+    </li>
+
+    
+  </ul>
+</div>
+<div>
+  <hr/>
+  <router-outlet></router-outlet>
+</div>

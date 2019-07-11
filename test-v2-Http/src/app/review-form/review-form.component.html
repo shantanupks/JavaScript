@@ -1,0 +1,17 @@
+<button *ngIf="!isOpen" (click)="toggleForm()">
+    <i class="fa fa-plus">
+    </i>
+</button>
+<div class="card">
+    <div class="card-header">Review Form</div>
+    <div class="card-body">
+        <form>
+            <label>stars:</label>
+            <select>
+                <option *ngFor="let n of [1,2,3,4,5]">{{n}}</option>
+            </select>
+
+            
+        </form>
+    </div>
+</div>
